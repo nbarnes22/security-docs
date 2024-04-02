@@ -1,7 +1,9 @@
 [[exceptions-api-create-exception-item]]
-=== Create exception item
+=== Create exceptions used by multiple rules
 
 Creates an exception item that you can add to a shared exception list or endpoint exception list. 
+
+TIP: Refer to <<exceptions-api-create-rule-default-exception-item>> for information about creating exceptions for a single rule. 
 
 [IMPORTANT]
 =====
