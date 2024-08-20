@@ -4,137 +4,153 @@
 
 Here are the highlights of what’s new and improved in {elastic-sec}. For detailed information about this release, check out our <<release-notes, release notes>>.
 
-Other versions: {security-guide-all}/8.12/whats-new.html[8.12] | {security-guide-all}/8.11/whats-new.html[8.11] | {security-guide-all}/8.10/whats-new.html[8.10] | {security-guide-all}/8.9/whats-new.html[8.9] | {security-guide-all}/8.8/whats-new.html[8.8] | {security-guide-all}/8.7/whats-new.html[8.7] | {security-guide-all}/8.6/whats-new.html[8.6] | {security-guide-all}/8.5/whats-new.html[8.5] | {security-guide-all}/8.4/whats-new.html[8.4] | {security-guide-all}/8.3/whats-new.html[8.3] | {security-guide-all}/8.2/whats-new.html[8.2] | {security-guide-all}/8.1/whats-new.html[8.1] | {security-guide-all}/8.0/whats-new.html[8.0] | {security-guide-all}/7.17/whats-new.html[7.17] | {security-guide-all}/7.16/whats-new.html[7.16] | {security-guide-all}/7.15/whats-new.html[7.15] | {security-guide-all}/7.14/whats-new.html[7.14] | {security-guide-all}/7.13/whats-new.html[7.13] | {security-guide-all}/7.12/whats-new.html[7.12] | {security-guide-all}/7.11/whats-new.html[7.11] | {security-guide-all}/7.10/whats-new.html[7.10] |
+Other versions: {security-guide-all}/8.14/whats-new.html[8.14] | {security-guide-all}/8.13/whats-new.html[8.13] | {security-guide-all}/8.12/whats-new.html[8.12] | {security-guide-all}/8.11/whats-new.html[8.11] | {security-guide-all}/8.10/whats-new.html[8.10] | {security-guide-all}/8.9/whats-new.html[8.9] | {security-guide-all}/8.8/whats-new.html[8.8] | {security-guide-all}/8.7/whats-new.html[8.7] | {security-guide-all}/8.6/whats-new.html[8.6] | {security-guide-all}/8.5/whats-new.html[8.5] | {security-guide-all}/8.4/whats-new.html[8.4] | {security-guide-all}/8.3/whats-new.html[8.3] | {security-guide-all}/8.2/whats-new.html[8.2] | {security-guide-all}/8.1/whats-new.html[8.1] | {security-guide-all}/8.0/whats-new.html[8.0] | {security-guide-all}/7.17/whats-new.html[7.17] | {security-guide-all}/7.16/whats-new.html[7.16] | {security-guide-all}/7.15/whats-new.html[7.15] | {security-guide-all}/7.14/whats-new.html[7.14] | {security-guide-all}/7.13/whats-new.html[7.13] | {security-guide-all}/7.12/whats-new.html[7.12] | {security-guide-all}/7.11/whats-new.html[7.11] | {security-guide-all}/7.10/whats-new.html[7.10] |
 {security-guide-all}/7.9/whats-new.html[7.9]
 
 // NOTE: The notable-highlights tagged regions are re-used in the Installation and Upgrade Guide. Full URL links are required in tagged regions.
 // tag::notable-highlights[]
 
 [float]
-== Detection rules and alerts enhancements
-
-The following enhancements have been added to detection rules and alerts:
+== Generative AI enhancements
 
 [float]
-=== Per-field diff for Elastic prebuilt rule updates
+=== Manage Elastic AI Assistant using API
 
-When examining an {security-guide}/prebuilt-rules-management.html#update-prebuilt-rules[updated Elastic prebuilt detection rule], you can now view rule changes field by field as well as in a full JSON view.
+You can now interact with and manage {security-guide}/security-assistant.html[Elastic AI Assistant] using the {security-guide}/assistant-api-overview.html[Elastic AI Assistant API]. 
+
+[float]
+=== Create new third-party data integrations using Automatic Import
+
+preview:[] {security-guide}/automatic-import.html[Automatic Import] uses AI to create integrations for your custom data sources.
 
 [role="screenshot"]
-image::whats-new/images/8.13/prebuilt-rules-update-diff.png[Prebuilt rule comparison, 85%]
-
-[float]
-=== Alert suppression supported for indicator match rules
-
-{security-guide}/alert-suppression.html[Alert suppression] now supports the {security-guide}/rules-ui-create.html#create-indicator-rule[indicator match] rule type. You can use it to reduce the number of repeated or duplicate detection alerts created by an indicator match rule.
-
-[float]
-=== Refined header design for alert details flyout 
-
-The header design for the {security-guide}/view-alert-details.html[alert details flyout] has been refined to improve readability and structure. Basic alert details now appear clearer and more organized. 
-
-[role="screenshot"]
-image::whats-new/images/8.13/alert-details-flyout-right-panel.png[Right panel of the alert details flyout, 75%]
-
-[float]
-== Persistence of Data Quality dashboard results 
-
-The {security-guide}/data-quality-dash.html[Data Quality dashboard] now retains results across sessions, ensuring continuity of information. Additionally, the dashboard now shows when each index was last checked.
-
-[role="screenshot"]
-image::whats-new/images/8.13/data-qual-dash.png[The Data Quality dashboard, 85%]
-
-[float]
-==  Visual event analyzer enhancements
-
-The {security-guide}/visual-event-analyzer.html[Visual event analyzer] UI has been enhanced with the following functionality:
-
-* Inline actions and a search bar to the left panel:
-+
-[role="screenshot"]
-image::whats-new/images/8.13/event-details.png[Event details panel, 85%]
-
-* A date and time range picker, which allows you to analyze an event within a specific period of time:
-+
-[role="screenshot"]
-image::whats-new/images/8.13/date-range-selection.png[The date and time range picker, 85%]
-
-* A data view selector, which allows you to filter analyzed events further:
-+
-[role="screenshot"]
-image::whats-new/images/8.13/data-view-selection.png[The data view selector, 85%]
-
-[float]
-== Response actions enhancements
-
-The following enhancements have been added to response actions:
-
-[float]
-=== Automated response actions for host processes
-
-You can now add {elastic-defend}'s `kill-process` or `suspend-process` {security-guide}/response-actions.html[response actions] to detection rules. This allows you to automatically terminate or suspend a process on an affected host when an event meets the rule's criteria.
-
-[role="screenshot"]
-image::whats-new/images/8.13/automated-response-actions.png[Automated response actions, 85%]
-
-[float]
-=== Third-party response actions (SentinelOne)
-
-You can now {security-guide}/third-party-actions.html#sentinelone-response-actions[direct SentinelOne] to perform response actions on protected hosts without leaving the {elastic-sec} UI. You can isolate and release a host from detection alerts and the response console, and view third-party actions in the response actions history log.
+image::whats-new/images/8.15/auto-import-success-message.png[The Automatic Import success message, 80%]
 
 [float]
 == Entity Analytics enhancements
 
-The following enhancements have been added to Entity Analytics:
+[float]
+=== Automatic recalculation of entity risk score
+
+{security-guide}/entity-risk-scoring.html[Entity risk score] is now automatically recalculated when you assign, change, or unassign an individual entity's {security-guide}/asset-criticality.html[asset criticality] level.
 
 [float]
-=== Asset criticality
+=== Manage asset criticality using API
 
-You can now assign an {security-guide}/asset-criticality.html[asset criticality] level to your entities based on their importance to your organization. For example, you can assign **Extreme impact** to business-critical entities, or **Low impact** to entities that pose minimal risk to your security posture.
+You can now manage {security-guide}/asset-criticality.html[asset criticality] using the {security-guide}/asset-criticality-api-overview.html[asset criticality API].
 
-The risk scoring engine includes asset criticality as an input when calculating entity risk scores.
+[float]
+== Detection rules and alerts enhancements
 
-With asset criticality, you can strengthen your threat detection capabilities by focusing your alert triage, threat-hunting, and investigation activities on high-impact entities.
+[float]
+=== Edit fields for detection rules
+
+You can now edit these fields for user-created {security-guide}/rules-ui-create.html[custom rules]:
+
+* **Max alerts per run**: Specify the maximum number of alerts a rule can create each time it runs.
++
+[role="screenshot"]
+image::whats-new/images/8.15/max-alerts-per-run.png[The Max alerts per run field highlighted in the Create new rule UI]
+
+* **Required fields**: Create an informational list of fields that a rule requires to function.
+
+* **Related integrations**: Create an informational list of one or more Elastic integrations associated with a rule.
++
+[role="screenshot"]
+image::whats-new/images/8.15/required-fields-related-integrations.png[The Required fields and Related integrations fields highlighted in the Create new rule UI]
+
+[float]
+=== Suppress alerts for {ml} and {esql} rules
+
+{security-guide}/alert-suppression.html[Alert suppression] now supports the {ml} and {esql} rule types. You can use it to reduce the number of repeated or duplicate detection alerts generated from {ml} and {esql} rules.
+
+[float]
+=== Use AI Assistant when writing rule queries
+
+When creating rules, you can now use AI Assistant to improve rule queries or to quickly correct them.
+
+[float]
+=== Bulk update custom highlighted fields for rules
+
+Bulk add or remove {security-guide}/rules-ui-create.html#rule-ui-advanced-params[custom highlighted fields] for multiple detection rules.
+
+[float]
+=== Preview entities and alerts in the alert details flyout
+
+You can now preview host and user details from the **Insights** tab of the {security-guide}/view-alert-details.html[alert details flyout] instead of going to the **Hosts** or **Users** pages for more information. From the **Correlations** tab in the flyout, you can also preview alerts that are related to each other instead of leaving the flyout to access them.
+
+[float]
+=== Expandable alert details flyout enabled by default
+
+The expandable alert details flyout is now enabled by default in multiple places throughout the {security-app}.
+
+[float]
+==  Improvements to the Timeline data exploration experience 
+
+Several improvements have been made to enhance your data exploration experience in Timeline: 
+
+- Multiple components from Discover have been incorporated, such as the sidebar and table, which allow you to quickly find fields of interest.
++
+[role="screenshot"]
+image::whats-new/images/8.15/timeline-sidebar-and-table.png[Example Timeline with the sidebar highlighted]
+
+- You can now toggle row renderers, which allow you to easily add or remove context from events.
++
+[role="screenshot"]
+image::whats-new/images/8.15/timeline-ui-renderer.png[Example Timeline with the event renderer highlighted]
+
+- Notes are easier to add and track from the new Notes flyout.
++
+[role="screenshot"]
+image::whats-new/images/8.15/timeline-notes-flyout.png[Example Timeline with the notes flyout highlighted]
+
+[float]
+== Response actions enhancements
+
+[float]
+=== Scan files and folders for malware
+
+{elastic-defend}'s new {security-guide}/response-actions.html#_scan[`scan` response action] lets you perform on-demand malware scans of a specific file or directory on a host. Scans are based on the malware protection settings configured in your {elastic-defend} integration policy.
+
+[float]
+=== Isolate and release CrowdStrike-enrolled hosts
+
+Using Elastic's CrowdStrike integration and connector, you can now perform {security-guide}/third-party-actions.html#crowdstrike-response-actions[response actions] on hosts enrolled in CrowdStrike's endpoint protection system. These actions are available in this release:
+
+* Isolate a host from the network
+* Release an isolated host
+
+[float]
+=== Retrieve files from SentinelOne-enrolled hosts
+
+Using Elastic's SentinelOne integration and connector, you can now {security-guide}/third-party-actions.html#sentinelone-response-actions[retrieve files] from SentinelOne-enrolled hosts and download them through {elastic-sec}.
+
+[float]
+== Filter out process descendants
+
+Create an {security-guide}/event-filters.html[event filter] that excludes the descendant events of a specific process, but still includes the primary process itself. This can help you limit the amount of events ingested into {elastic-sec}.
 
 [role="screenshot"]
-image::whats-new/images/8.13/assign-asset-criticality-host-details.png[Assign asset criticality from the host details page, 85%]
+image::whats-new/images/8.15/event-filter-process-descendants.png[Add event filter flyout, 70%]
 
 [float]
-=== Enhanced host and user details flyouts
+== Cases enhancements
 
-The redesigned {security-guide}/hosts-overview.html#host-details-flyout[host details flyout] and {security-guide}/users-page.html#user-details-flyout[user details flyout] allow you to:
+[float]
+=== Introducing case templates
 
-* View entity risk data and all risk contributions. Expand the risk summary section to view details about the entity's risk contributions.
-* View and assign asset criticality to your entities.
-* View relevant entity details such as the entity ID, when the entity was first and last seen, and the associated IP addresses and operating system.
+preview:[] {kib} cases offer a new powerful capability to enhance your analyst teams' efficiency with {security-guide}/cases-manage-settings.html#cases-templates[templates]. You can manage multiple templates, each of which can be used to auto-populate values in a case with pre-defined knowledge. This streamlines the investigative process and significantly reduces resolution time.
 
 [role="screenshot"]
-image::whats-new/images/8.13/host-details-flyout.png[Host details flyout, 85%]
+image::whats-new/images/8.15/cases-add-template.png[Add a template in case settings, 80%]
 
 [float]
-== Cloud Security enhancements
+=== Case custom fields generally available
 
-The following enhancements have been added to Cloud Security:
-
-[float]
-=== Benchmark rules can be turned off
-
-You can now turn individual {security-guide}/cspm-benchmark-rules.html[benchmark rules] on or off. This allows you to customize your Cloud Security Posture Management (CSPM) and Kubernetes Security Posture Management (KSPM) integrations to reduce noise from benchmark rules that don't apply to your environment.
+In 8.11, {security-guide}/cases-manage-settings.html#cases-ui-custom-fields[custom fields] were added to cases, and they are now moving from technical preview to general availability. You can set custom field values in your templates to enhance consistency across cases.
 
 [role="screenshot"]
-image::whats-new/images/8.13/benchmark-rules.png[Benchmark rules, 85%]
-
-[float]
-=== Cloud native vulnerability management (CNVM) Findings UI enhancements
-
-The **Vulnerabilities** table on the {security-guide}/vuln-management-findings.html[Findings page] now includes improved grouping capabilities (up to three nested groupings), and more table customization options.
-
-image::whats-new/images/8.13/cnvm-findings-grouped.png[CNVM findings grouped, 85%]
-
-[float]
-== Custom fields for cases must have a default value
-
-When adding {security-guide}/cases-open-manage.html#cases-ui-custom-fields[custom fields] to a case, any mandatory fields must have a default value.
+image::whats-new/images/8.15/cases-add-custom-field.png[Add a custom field in case settings]
 
 
 // end::notable-highlights[]

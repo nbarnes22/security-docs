@@ -1,5 +1,4 @@
 ---
-id: serverlessSecurityVulnManagementFaq
 slug: /serverless/security/vuln-management-faq
 title: Frequently asked questions (FAQ)
 description: Frequently asked questions about the CNVM integration.
@@ -19,6 +18,10 @@ The CNVM integration uses various security data sources. The complete list can b
 **What's the underlying scanner used by CNVM integration?**
 
 CNVM uses the open source scanner [Trivy](https://github.com/aquasecurity/trivy) v0.35.
+
+**What system architectures are supported?**
+
+Because of Trivy's limitations, CNVM can only be deployed on ARM-based VMs. However, it can scan hosts regardless of system architecture.
 
 **How often are the security data sources synchronized?**
 

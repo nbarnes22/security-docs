@@ -1,5 +1,4 @@
 ---
-id: serverlessSecurityEventFilters
 slug: /serverless/security/event-filters
 title: Event filters
 # description: Description to be written
@@ -12,13 +11,13 @@ status: in review
 
 Event filters (**Assets** → **Event filters**) allow you to filter out endpoint events that you don't want stored in ((es)) — for example, high-volume events. By creating event filters, you can optimize your storage in ((es)).
 
-Event filters do not lower CPU usage on hosts; ((elastic-endpoint)) still monitors events to detect and prevent possible threats, but without writing event data to ((es)). To compare event filters with other endpoint artifacts, refer to <DocLink id="serverlessSecurityOptimizeEdr" />.
+Event filters do not lower CPU usage on hosts; ((elastic-endpoint)) still monitors events to detect and prevent possible threats, but without writing event data to ((es)). To compare event filters with other endpoint artifacts, refer to <DocLink slug="/serverless/security/optimize-edr" />.
 
 <DocCallOut title="Requirements">
 
 You must have the appropriate user role to use this feature.
 {/* Placeholder statement until we know which specific roles are required. Classic statement below for reference. */}
-{/* You must have the **Event Filters** <DocLink id="serverlessSecurityEndpointManagementReq">privilege</DocLink> to access this feature. */}
+{/* You must have the **Event Filters** <DocLink slug="/serverless/security/endpoint-management-req">privilege</DocLink> to access this feature. */}
 
 </DocCallOut>
 
@@ -54,6 +53,12 @@ Create event filters from the Hosts page or the Event filters page.
       1. `Description`: Enter a filter description (optional).
 1. In the **Conditions** section, depending which page you're using to create the filter, either modify the pre-populated conditions or add new conditions to define how ((elastic-sec)) will filter events. Use these settings:
     1. `Select operating system`: Select the appropriate operating system.
+    1. Select which kind of event filter you'd like to create:
+    
+        * `Events`: Create a generic event filter that can match any event type. All matching events are excluded.
+        * `Process Descendants`: Specify a process, and suppress the activity of its descendant processes. Events from the matched process will be ingested, but events from its descendant processes will be excluded.
+
+            This option adds the condition `event.category is process` to narrow the filter to process-type events. You can add more conditions to identify the process whose descendants you want to exclude.
     1. `Field`: Select a field to identify the event being filtered.
     1. `Operator`: Select an operator to define the condition. Available options are:
         * `is`
