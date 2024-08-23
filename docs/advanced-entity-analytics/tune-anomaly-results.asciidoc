@@ -24,27 +24,24 @@ For example, to filter out results from a housekeeping process, named
 [[create-fiter-list]]
 === Create a filter list
 
-. Go to *Machine Learning* -> *Anomaly Detection* -> *Settings*.
-. Click *Filter Lists* and then *New*.
-+
-The *Create new filter list* pane is displayed.
-. Enter a filter list ID.
-. Enter a description for the filter list (optional).
-. Click *Add item*.
-. In the *Items* textbox, enter the name of the process for which you want to
-filter out anomaly results (`maintenanceservice.exe` in our example).
+. Go to Kibana, then *Machine Learning* -> *Anomaly Detection* -> *Settings*.
+. Go to the *Filter Lists* section, then click and then *Create*.
+. On the Create new filter list page, do the following:
+.. Enter a filter list ID.
+.. Enter a description for the filter list (optional).
+.. Click *Add item*, then in the *Items* textbox, enter the name of the process for which you want to filter out anomaly results (`maintenanceservice.exe` in our example).
 +
 [role="screenshot"]
 image::filter-add-item.png[]
-. Click *Add* and then *Save*.
-+
-The new filter appears in the Filter List and can be added to relevant jobs.
+.. Click *Add* and then *Save*.
+
+The new filter appears on the Filter Lists page and can be added to relevant jobs.
 
 [float]
 [[add-job-filter]]
 === Add the filter to the relevant job
 
-. Go to *Machine Learning* -> *Anomaly Detection* -> *Anomaly Explorer*.
+. Go to the *Anomaly Explorer* page (*Anomaly Detection* -> *Anomaly Explorer*).
 . Navigate to the job results for which the filter is required. If the job results
 are not listed, click *Edit job selection* and select the relevant job.
 . In the *actions* column, click the gear icon and then select _Configure rules_.
