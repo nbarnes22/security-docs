@@ -25,7 +25,7 @@ For example, to filter out results from a housekeeping process, named
 === Create a filter list
 
 . Go to Kibana, then *Machine Learning* -> *Anomaly Detection* -> *Settings*.
-. Go to the *Filter Lists* section, then click and then *Create*.
+. Go to the *Filter Lists* section, then click *Create*.
 . On the Create new filter list page, do the following:
 .. Enter a filter list ID.
 .. Enter a description for the filter list (optional).
