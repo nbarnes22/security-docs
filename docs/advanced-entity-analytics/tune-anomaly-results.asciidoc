@@ -46,7 +46,7 @@ The new filter appears on the Filter Lists page, where you can add it to relevan
 . In Kibana, go to **Machine Learning** -> **Anomaly Detection** -> **Anomaly Explorer**.
 . In the Job selection flyout, select the jobs for which you want to add a filter to. If the jobs don't have results, click **Edit job selection* to select other jobs.  
 . Go Anomalies section of the Anomaly Explorer page and and navigate to the job results for which the filter is required. 
-. In the **Actions** column, click the gear icon and then select **Configure rules**.
+. In the **Actions** column, click the gear icon, then select **Configure rules**.
 +
 The Create Rule window displays.
 +
@@ -57,9 +57,9 @@ image::rule-scope.png[]
 .. The _WHEN_ statement for the relevant detector (`process.name` in our
 example).
 .. The _IS IN_ statement.
-.. The filter you created as part of the <<create-fiter-list>> procedure.
+.. The filter you created as part of the <<create-filter-list>> procedure.
 +
-TIP: For more information, see
+TIP: To learn more about creating filters that change the behavior of anomaly detectors, refer to
 {ml-docs}/ml-configuring-detector-custom-rules.html[Customizing detectors with custom rules].
 
 . Click *Save* to save the filter to the job results.
@@ -131,6 +131,7 @@ image::ml-rule-threshold.png[]
 _WHEN actual IS GREATER THAN <X>_
 +
 Where `<X>` is the threshold above which anomalies are detected.
-. Click *Save*.
-. To apply the new threshold, rerun the job (*Job Management* -> *Actions* ->
-*Start datafeed*).
+. Click **Save**.
+. To apply the new threshold, rerun the job: 
+.. Go to **Anomaly Detection** -> **Jobs**, and find the `packetbeat_dns_tunneling`.   
+.. In the *Actions* column, click the **All actions** menu (**...**), then select **Start datafeed**.
